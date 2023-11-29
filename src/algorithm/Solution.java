@@ -1,5 +1,10 @@
 package algorithm;
 
+/*
+* Поиск числа K в матрице, самым оптимальным способом.
+* Проверяем столбцы матрицы, если начальное число столбца больше числа k
+* исключаем столбец. Если меньше, далее повторяем принцип но с строками
+* */
 public class Solution {
     public boolean searchMatrix (int[][] matrix, int k){
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0){
@@ -20,5 +25,22 @@ public class Solution {
             }
         }
         return false;
+    }
+/*
+* Дается число в виде массива чисел, увеличиваем его на 1
+* и возвращаем результирующий массив
+* */
+    public int[] plusOne(int[] digits){
+        for (int i = digits.length - 1; i >= 0; i--){
+            if (digits[i] == 9){
+                digits[i] = 0;
+            }else {
+                digits[i]++;
+                return digits;
+            }
+        }
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
     }
 }
