@@ -23,5 +23,13 @@ public class Main {
         int[] result = Solution.plusOne(numb);
         System.out.println("Теперь число ровно:" + Arrays.toString(result));
          */
+
+
+        /*
+        //Использование генератора паролей
+        String chars = "бзфызвщоЗЩОЙЦКТОлфащо";
+        int leng = 5;
+        System.out.println("Пароль: " + Solution.gen_pass(leng, chars));
+         */
     }
 }

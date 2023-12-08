@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.Random;
+
 /*
 * Поиск числа K в матрице, самым оптимальным способом.
 * Проверяем столбцы матрицы, если начальное число столбца больше числа k
@@ -44,5 +46,18 @@ public class Solution {
         return digits;
     }
 
+    /*
+    * Функция генератора паролей - Принимает число для длинны пароля и символы
+    * */
+    public static String gen_pass(int pass_length, String character){
+        StringBuilder pass = new StringBuilder();                       //StringBuilder позволяет добавлять, удалять и изменять символы в строке без создания нового объекта String.
+        Random random = new Random();                                   //Random можно использовать для создания различных видов случайных данных,
+
+        for (int i = 0; i < pass_length; i++){
+            int index = random.nextInt(character.length());
+            pass.append(character.charAt(index));
+        }
+        return pass.toString();
+    }
 
 }
