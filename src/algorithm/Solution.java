@@ -6,7 +6,7 @@ package algorithm;
 * исключаем столбец. Если меньше, далее повторяем принцип но с строками
 * */
 public class Solution {
-    public boolean searchMatrix (int[][] matrix, int k){
+    public static boolean searchMatrix(int[][] matrix, int k){
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0){
             return false;
         }
@@ -27,10 +27,10 @@ public class Solution {
         return false;
     }
 /*
-* Дается число в виде массива чисел, увеличиваем его на 1
-* и возвращаем результирующий массив
+* Дается число в виде массива чисел( 100 = [1,0,0] и т.д.).
+* Увеличиваем его на 1 и возвращаем результат
 * */
-    public int[] plusOne(int[] digits){
+    public static int[] plusOne(int[] digits){
         for (int i = digits.length - 1; i >= 0; i--){
             if (digits[i] == 9){
                 digits[i] = 0;
@@ -43,4 +43,6 @@ public class Solution {
         digits[0] = 1;
         return digits;
     }
+
+
 }
