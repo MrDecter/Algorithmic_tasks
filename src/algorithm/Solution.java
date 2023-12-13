@@ -28,6 +28,10 @@ public class Solution {
         }
         return false;
     }
+
+
+
+
 /*
 * Дается число в виде массива чисел( 100 = [1,0,0] и т.д.).
 * Увеличиваем его на 1 и возвращаем результат
@@ -46,6 +50,9 @@ public class Solution {
         return digits;
     }
 
+
+
+
     /*
     * Функция генератора паролей - Принимает число для длинны пароля и символы
     * */
@@ -58,6 +65,46 @@ public class Solution {
             pass.append(character.charAt(index));
         }
         return pass.toString();
+    }
+
+
+
+
+
+    /*
+     * Функция быстрой сортировки
+     * */
+
+    public void quick_sort(int[] sort_arr, int low, int hight){
+        if (sort_arr.length == 0 || low > hight){
+            return;
+        }
+
+        int middle = low + (hight - low) / 2;
+        int border = sort_arr[middle];
+
+        int i = low, j = hight;
+        while(i <= j){
+            while (sort_arr[i] < border){
+                i++;
+            }
+            while (sort_arr[j] > border){
+                j--;
+            }
+            if (i <= j){
+                int swap = sort_arr[i];
+                sort_arr[i] = sort_arr[j];
+                sort_arr[j] = swap;
+                i++;
+                j--;
+            }
+        }
+        if (low < j){
+            quick_sort(sort_arr,low,j);
+        }
+        if (hight > i){
+            quick_sort(sort_arr,i,hight);
+        }
     }
 
 }
